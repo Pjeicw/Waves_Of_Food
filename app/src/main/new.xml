@@ -1,0 +1,2 @@
+<TextView android:id="@+id/foodNamePopular"
+    android:layout_width="0dp"  <-- Set width to 0dpandroid:layout_height="wrap_content"android:layout_marginLeft="16dp"android:fontFamily="@font/lato_bold"android:text="Food Name"android:textColor="@color/black"android:ellipsize="end"    <-- Add ellipsize if neededapp:layout_constraintBottom_toBottomOf="@+id/imageView6"app:layout_constraintEnd_toEndOf="parent"  <-- Add end constraintapp:layout_constraintStart_toEndOf="@+id/imageView6"app:layout_constraintTop_toTopOf="@+id/imageView6" />

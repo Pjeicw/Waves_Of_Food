@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WavesOfFood"
+        tools:targetApi="31">
+
+        <activity
+            android:name="com.examples.wavesoffood.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.examples.wavesoffood.ForgotPasswordActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="android:dataExtractionRules"
+            android:resource="@xml/data_extraction_rules"
+            tools:targetApi="31" /> <!-- Only target API 31 and above -->
+        <!-- Splash Screen should be the launcher activity -->
+        <activity
+            android:name="com.examples.wavesoffood.Splash_Screen"
+            android:exported="true"> <!-- Activity can be launched by other apps -->
+            <intent-filter>
+
+                <!-- Defines that this is the main launcher activity -->
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- Start Activity should not be exported to external apps -->
+        <activity
+            android:name="com.examples.wavesoffood.StartActivity"
+            android:exported="false" /> <!-- This activity is private to the app -->
+        <!-- Login Activity for user authentication -->
+        <activity
+            android:name="com.examples.wavesoffood.LoginActivity"
+            android:exported="false" /> <!-- Only accessible within the app -->
+        <!-- Main Activity after login -->
+        <activity
+            android:name="com.examples.wavesoffood.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" /> <!-- Adjust the screen when keyboard pops up -->
+        <!-- Other app activities -->
+        <activity
+            android:name="com.examples.wavesoffood.RecentOrderItems"
+            android:exported="false" /> <!-- Recent order items screen -->
+        <activity
+            android:name="com.examples.wavesoffood.DetailsActivity"
+            android:exported="false" /> <!-- Product details screen -->
+        <activity
+            android:name="com.examples.wavesoffood.PayOutActivity"
+            android:exported="false" /> <!-- Checkout and payment screen -->
+        <activity
+            android:name="com.examples.wavesoffood.ChooseLocationActivity"
+            android:exported="false" /> <!-- Location selection screen -->
+        <activity
+            android:name="com.examples.wavesoffood.SignUpActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>
